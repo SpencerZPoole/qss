@@ -1,13 +1,21 @@
 Hooks.on('renderTokenHUD', /** @param {HTMLFormElement} html */(_app, html) => {
   /** @type {HTMLDivElement} */
   const statusEffects = html.querySelector(".col.right .palette.status-effects");
-  if (!statusEffects || statusEffects.querySelector(".qss-quick-input")) return;
+  if (!statusEffects || statusEffects.querySelector(".qss-quick-filter")) return;
 
-  const qssQuickInput = document.createElement('input')
+  const qssQuickFilter = document.createElement('label');
+  qssQuickFilter.classList.add("qss-quick-filter");
+
+  const qssQuickLabel = document.createElement('span');
+  qssQuickLabel.classList.add("qss-quick-label");
+  qssQuickLabel.textContent = game.i18n.localize("quick-status-select.TokenHud.quick-input.label");
+
+  const qssQuickInput = document.createElement('input');
   qssQuickInput.type = "search";
   qssQuickInput.placeholder = game.i18n.localize("quick-status-select.TokenHud.quick-input.placeholder");
   qssQuickInput.classList.add("qss-quick-input");
-  statusEffects.prepend(qssQuickInput);
+  qssQuickFilter.append(qssQuickLabel, qssQuickInput);
+  statusEffects.prepend(qssQuickFilter);
 
   qssQuickInput.addEventListener('input', () => {
     const term = qssQuickInput.value.trim().toLowerCase();
@@ -16,7 +24,7 @@ Hooks.on('renderTokenHUD', /** @param {HTMLFormElement} html */(_app, html) => {
     for (const e of effects) {
       const id = e.dataset.statusId?.trim().toLowerCase() ?? "";
       const label = (e.dataset.tooltipText || game.i18n.localize(e.dataset.tooltip ?? ""))?.trim().toLowerCase() ?? "";
-      e.hidden = !(id.includes(term) || label.includes(term))
+      e.hidden = !(id.includes(term) || label.includes(term));
     }
   });
 
