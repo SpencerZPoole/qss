@@ -8,7 +8,7 @@ This repository is a public verification fork of [Jeremiah Verba's Quick Status 
 
 - Verified on Foundry VTT `14.362`
 - Runtime test environment: D35E `3.0.2`
-- Module version: `2.0.2`
+- Module version: `2.0.3`
 - Expected to remain system-agnostic for systems/modules that preserve Foundry's standard Token HUD status-effect markup
 
 This fork builds on the upstream V13 support work and the prior fork work credited in the module metadata, including Emmi's updates for Foundry v12, Lancer, Pathfinder 2e, and Monk's Little Details.
@@ -24,7 +24,7 @@ https://github.com/SpencerZPoole/qss/releases/latest/download/module.json
 Release assets:
 
 - Manifest: https://github.com/SpencerZPoole/qss/releases/latest/download/module.json
-- Zip: https://github.com/SpencerZPoole/qss/releases/download/v2.0.2/module.zip
+- Zip: https://github.com/SpencerZPoole/qss/releases/download/v2.0.3/module.zip
 
 ## Usage
 
@@ -33,6 +33,14 @@ Release assets:
 3. Open the status/effects palette.
 4. Type in the filter field to narrow visible statuses by id or localized label.
 5. Press Enter to apply the first visible matching status.
+
+## v2.0.3 Compact Filter Row Polish
+
+Changes from `v2.0.2`:
+
+- Removed sticky positioning from the visible filter row so it stays part of the status icon grid instead of behaving like an overlay while filtering.
+- Reset the status palette scroll position whenever the filter changes, preventing blank scroll space from appearing above filtered results.
+- Preserved the `Search:` label, compact input styling, filtering behavior, clickable icons, and Enter-to-apply behavior.
 
 ## v2.0.2 Visible Search Row Fix
 

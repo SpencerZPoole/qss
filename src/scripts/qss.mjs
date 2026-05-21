@@ -2,6 +2,7 @@ Hooks.on('renderTokenHUD', /** @param {HTMLFormElement} html */(_app, html) => {
   /** @type {HTMLDivElement} */
   const statusEffects = html.querySelector(".col.right .palette.status-effects");
   if (!statusEffects || statusEffects.querySelector(".qss-quick-filter")) return;
+  statusEffects.classList.add("qss-status-effects");
 
   const qssQuickFilter = document.createElement('label');
   qssQuickFilter.classList.add("qss-quick-filter");
@@ -26,6 +27,7 @@ Hooks.on('renderTokenHUD', /** @param {HTMLFormElement} html */(_app, html) => {
       const label = (e.dataset.tooltipText || game.i18n.localize(e.dataset.tooltip ?? ""))?.trim().toLowerCase() ?? "";
       e.hidden = !(id.includes(term) || label.includes(term));
     }
+    statusEffects.scrollTop = 0;
   });
 
   qssQuickInput.addEventListener('keydown', event => {

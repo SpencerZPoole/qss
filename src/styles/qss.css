@@ -1,8 +1,9 @@
+#token-hud .status-effects.qss-status-effects {
+  align-content: start;
+}
+
 #token-hud .status-effects .qss-quick-filter {
   grid-column: 1 / -1;
-  position: sticky;
-  top: 0;
-  z-index: 1;
   display: flex;
   align-items: center;
   gap: 4px;
