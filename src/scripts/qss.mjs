@@ -1,9 +1,10 @@
 Hooks.on('renderTokenHUD', /** @param {HTMLFormElement} html */(_app, html) => {
   /** @type {HTMLDivElement} */
   const statusEffects = html.querySelector(".col.right .palette.status-effects");
+  if (!statusEffects || statusEffects.querySelector(".qss-quick-input")) return;
 
   const qssQuickInput = document.createElement('input')
-  qssQuickInput.type = "text";
+  qssQuickInput.type = "search";
   qssQuickInput.placeholder = game.i18n.localize("quick-status-select.TokenHud.quick-input.placeholder");
   qssQuickInput.classList.add("qss-quick-input");
   statusEffects.prepend(qssQuickInput);
@@ -13,20 +14,21 @@ Hooks.on('renderTokenHUD', /** @param {HTMLFormElement} html */(_app, html) => {
     /** @type {NodeListOf<HTMLElement>} */
     const effects = statusEffects.querySelectorAll('.effect-control');
     for (const e of effects) {
-      const id = e.dataset.statusId?.trim().toLowerCase();
-      const label = (e.dataset.tooltipText || game.i18n.localize(e.dataset.tooltip))?.trim().toLowerCase();
-      e.hidden = !(id.match(term) || label.match(term))
+      const id = e.dataset.statusId?.trim().toLowerCase() ?? "";
+      const label = (e.dataset.tooltipText || game.i18n.localize(e.dataset.tooltip ?? ""))?.trim().toLowerCase() ?? "";
+      e.hidden = !(id.includes(term) || label.includes(term))
     }
   });
 
-  qssQuickInput.addEventListener('keypress', e => {
-    debug('got keypress:', e.key, game.qssSearchTerm);
-    if (e.key === 'Enter' && qssQuickInput.value.trim()) {
+  qssQuickInput.addEventListener('keydown', event => {
+    debug('got keydown:', event.key, game.qssSearchTerm);
+    if (event.key === 'Enter' && qssQuickInput.value.trim()) {
+      event.preventDefault();
       /** @type {NodeListOf<HTMLElement>} */
       const effects = statusEffects.querySelectorAll('.effect-control');
-      for (const e of effects) {
-        if (!e.hidden) {
-          e.click();
+      for (const effect of effects) {
+        if (!effect.hidden) {
+          effect.click();
           break;
         }
       }
@@ -35,7 +37,7 @@ Hooks.on('renderTokenHUD', /** @param {HTMLFormElement} html */(_app, html) => {
 
   html
     .querySelector("button[data-palette='effects']")
-    .addEventListener('mouseup', () => setTimeout(() => qssQuickInput.focus(), 0));
+    ?.addEventListener('mouseup', () => setTimeout(() => qssQuickInput.focus(), 0));
 });
 
 // Debug logging helper
