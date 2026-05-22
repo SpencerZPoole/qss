@@ -4,19 +4,13 @@ Quick Status Select adds a search row to Foundry VTT's Token HUD status-effect p
 
 ## Install
 
-In Foundry, open **Add-on Modules > Install Module**, paste a manifest URL into **Manifest URL**, and install.
-
-Official upstream channel:
-
-```text
-https://github.com/jeremiahverba/qss/releases/latest/download/module.json
-```
-
-Spencer's Foundry V14 compatibility build:
+In Foundry, open **Add-on Modules > Install Module**, paste this into **Manifest URL**, and install Spencer's Foundry V14 compatibility build:
 
 ```text
 https://github.com/SpencerZPoole/qss/releases/latest/download/module.json
 ```
+
+The original upstream repository is <https://github.com/jeremiahverba/qss>. At this time, this compatibility build is the verified pasteable manifest channel for the V14 update.
 
 ## Compatibility
 
