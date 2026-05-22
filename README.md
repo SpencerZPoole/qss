@@ -59,3 +59,9 @@ Quick Status Select was originally created by Jeremiah Verba. This fork also bui
 The module is distributed under the existing MIT license. See `src/LICENSE` for the license text and original copyright notice.
 
 Created with help from [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project/-/wikis/home).
+
+## Support
+
+If this compatibility fork helped your Foundry V14 workflow, optional support for Spencer's compatibility testing, release packaging, and documentation work is welcome: [paypal.me/mrpooley92](https://paypal.me/mrpooley92).
+
+The upstream author, compatibility contributors, and license terms remain credited above.
