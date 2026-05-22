@@ -62,6 +62,9 @@ Created with help from [create-foundry-project](https://gitlab.com/foundry-proje
 
 ## Donate
 
-If this compatibility fork helped your Foundry V14 workflow, you can donate to support Spencer's compatibility testing, release packaging, and documentation work through [GitHub Sponsors](https://github.com/sponsors/SpencerZPoole) or [PayPal](https://paypal.me/mrpooley92). GitHub Sponsors is best for recurring sponsorships; PayPal works well for one-time donations.
+If this compatibility fork helped your Foundry V14 workflow, donations are welcome to support Spencer's compatibility testing, release packaging, and documentation work. GitHub Sponsors is best for recurring sponsorships; PayPal works well for one-time donations.
+
+[![Sponsor on GitHub](https://img.shields.io/badge/GitHub%20Sponsors-Donate-ea4aaa?style=flat&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/SpencerZPoole)
+[![Donate with PayPal](https://img.shields.io/badge/PayPal-One--time%20donation-00457C?style=flat&logo=paypal&logoColor=white)](https://paypal.me/mrpooley92)
 
 The upstream author, compatibility contributors, and license terms remain credited above.
