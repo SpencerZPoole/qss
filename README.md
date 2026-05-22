@@ -60,8 +60,8 @@ The module is distributed under the existing MIT license. See `src/LICENSE` for 
 
 Created with help from [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project/-/wikis/home).
 
-## Support
+## Donate
 
-If this compatibility fork helped your Foundry V14 workflow, optional support for Spencer's compatibility testing, release packaging, and documentation work is welcome: [paypal.me/mrpooley92](https://paypal.me/mrpooley92).
+If this compatibility fork helped your Foundry V14 workflow, you can donate to support Spencer's compatibility testing, release packaging, and documentation work through [GitHub Sponsors](https://github.com/sponsors/SpencerZPoole) or [PayPal](https://paypal.me/mrpooley92). GitHub Sponsors is best for recurring sponsorships; PayPal works well for one-time donations.
 
 The upstream author, compatibility contributors, and license terms remain credited above.
