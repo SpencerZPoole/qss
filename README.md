@@ -1,17 +1,8 @@
 # Quick Status Select
 
-Quick Status Select is a Foundry VTT module that adds a search field to the Token HUD status-effect palette so effects and conditions can be filtered quickly.
+Quick Status Select adds a search row to Foundry VTT's Token HUD status-effect palette, making it faster to find and apply conditions or effects on a selected token.
 
-This repository is a public verification fork of [Jeremiah Verba's Quick Status Select](https://github.com/jeremiahverba/qss). It keeps the original module id, behavior, and MIT license attribution while documenting a locally verified Foundry V14 compatibility build.
-
-## Compatibility
-
-- Verified on Foundry VTT `14.362`
-- Runtime test environment: D35E `3.0.2`
-- Module version: `2.0.3`
-- Expected to remain system-agnostic for systems/modules that preserve Foundry's standard Token HUD status-effect markup
-
-This fork builds on the upstream V13 support work and the prior fork work credited in the module metadata, including Emmi's updates for Foundry v12, Lancer, Pathfinder 2e, and Monk's Little Details.
+This repository is a public compatibility fork of [Jeremiah Verba's Quick Status Select](https://github.com/jeremiahverba/qss). It preserves the original module id, behavior, and MIT license attribution while publishing a Foundry V14 verified build.
 
 ## Install
 
@@ -26,60 +17,45 @@ Release assets:
 - Manifest: https://github.com/SpencerZPoole/qss/releases/latest/download/module.json
 - Zip: https://github.com/SpencerZPoole/qss/releases/download/v2.0.3/module.zip
 
+## Compatibility
+
+- Module version: `2.0.3`
+- Foundry VTT: minimum `13`, verified `14.362`
+- Verified test environment: Foundry `14.362` with D35E `3.0.2`
+
+Quick Status Select is intended to remain system-agnostic for systems and modules that preserve Foundry's standard Token HUD status-effect palette.
+
 ## Usage
 
 1. Enable **Quick Status Select** in your world.
 2. Select a token and open the Token HUD.
 3. Open the status/effects palette.
-4. Type in the filter field to narrow visible statuses by id or localized label.
-5. Press Enter to apply the first visible matching status.
+4. Type in the **Search:** field to filter statuses by id or localized label.
+5. Press Enter to apply the first visible matching status, or click any visible icon.
 
-## v2.0.3 Compact Filter Row Polish
+## Changes in This Fork
 
-Changes from `v2.0.2`:
+This V14 verification build keeps the existing QSS experience and focuses on compatibility and polish:
 
-- Removed sticky positioning from the visible filter row so it stays part of the status icon grid instead of behaving like an overlay while filtering.
-- Reset the status palette scroll position whenever the filter changes, preventing blank scroll space from appearing above filtered results.
-- Preserved the `Search:` label, compact input styling, filtering behavior, clickable icons, and Enter-to-apply behavior.
-
-## v2.0.2 Visible Search Row Fix
-
-Changes from `v2.0.1`:
-
-- Replaced the absolutely positioned quick input with a visible filter row inside the status-effects palette.
-- Added a static `Search:` label and `Status` placeholder so the HUD affordance is visible and understandable.
-- Anchored the filter row at the top of the status-effects palette while preserving the existing keyboard filtering and Enter-to-apply behavior.
-
-## v2.0.1 Verification Build
-
-Changes from `jeremiahverba/qss` at commit `e594142`:
-
-- Updated module compatibility metadata to verified `14.362`.
-- Pointed release metadata at this public fork's GitHub release assets.
-- Replaced regex-based matching with plain-text `includes` matching so inputs such as `[` do not throw invalid-regex errors.
-- Added defensive guards so the HUD patch exits cleanly if the status palette is missing or already patched.
-- Changed the quick filter input to `type="search"`.
-- Moved Enter handling from `keypress` to `keydown` and prevents the default form action before clicking the first visible effect.
-- Added safer tooltip localization fallback for effects without tooltip data.
-- Made the effects-palette focus listener optional so altered HUD layouts do not fail during render.
-
-Validation performed against the local Foundry install:
-
-- `node --check src/scripts/qss.mjs`
-- Manifest reference validation for script, style, language, license, manifest, and download paths
-- Live Foundry `14.362` Token HUD check: filter input appears, `blind` filters to the blind status, Enter selects the visible result, `[` no longer crashes the HUD, and repeated HUD binding does not duplicate the input
-- Local security gate with no QSS findings
+- Verified the module on Foundry VTT `14.362`.
+- Replaced regex filtering with plain-text matching, so special characters in the search field cannot trigger invalid-regex errors.
+- Restored a visible **Search:** row with a `Status` placeholder in the Token HUD status palette.
+- Kept the search row compact and part of the icon grid while filtering, preventing the large blank overlay area that could appear above filtered results.
+- Reset the palette scroll position as the filter changes, so matching icons stay anchored below the search row.
+- Kept Enter-to-apply and clickable status icons working with the filtered results.
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/SpencerZPoole/qss/main/qss-empty.png" alt="Image of Quick Status Select" width="400"/>
+<img src="https://raw.githubusercontent.com/SpencerZPoole/qss/main/qss-empty.png" alt="Quick Status Select with the status search field empty" width="400"/>
 
-<img src="https://raw.githubusercontent.com/SpencerZPoole/qss/main/qss-example1.png" alt="Image of Quick Status Select 2" width="400"/>
+<img src="https://raw.githubusercontent.com/SpencerZPoole/qss/main/qss-example1.png" alt="Quick Status Select filtering status effects" width="400"/>
 
-<img src="https://raw.githubusercontent.com/SpencerZPoole/qss/main/qss-example2.png" alt="Image of Quick Status Select 3" width="400"/>
+<img src="https://raw.githubusercontent.com/SpencerZPoole/qss/main/qss-example2.png" alt="Quick Status Select showing a narrowed status list" width="400"/>
 
 ## Credits and License
 
-Original module work is credited to Jeremiah Verba and the upstream contributors. This fork preserves the existing MIT license file, including its copyright notice.
+Quick Status Select was originally created by Jeremiah Verba. This fork also builds on compatibility work credited to Emmi in the module metadata.
+
+The module is distributed under the existing MIT license. See `src/LICENSE` for the license text and original copyright notice.
 
 Created with help from [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project/-/wikis/home).
