@@ -4,6 +4,10 @@ Quick Status Select adds a search row to Foundry VTT's Token HUD status-effect p
 
 This repository is a public compatibility fork of [Jeremiah Verba's Quick Status Select](https://github.com/jeremiahverba/qss). It preserves the original module id, behavior, and MIT license attribution while publishing a Foundry V14 verified build.
 
+**Support:** If this compatibility fork helps your Foundry V14 workflow, donations are optional and support Spencer's compatibility testing, release packaging, and documentation. Upstream author and contributor credit remains below.
+
+[![Sponsor on GitHub](https://img.shields.io/badge/GitHub%20Sponsors-Donate-ea4aaa?style=flat&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/SpencerZPoole) [![Donate with PayPal](https://img.shields.io/badge/PayPal-One--time%20donation-00457C?style=flat&logo=paypal&logoColor=white)](https://paypal.me/mrpooley92)
+
 ## Install
 
 Use this manifest URL in Foundry's module installer:
@@ -60,11 +64,3 @@ The module is distributed under the existing MIT license. See `src/LICENSE` for 
 
 Created with help from [create-foundry-project](https://gitlab.com/foundry-projects/foundry-pc/create-foundry-project/-/wikis/home).
 
-## Donate
-
-If this compatibility fork helped your Foundry V14 workflow, donations are welcome to support Spencer's compatibility testing, release packaging, and documentation work. GitHub Sponsors is best for recurring sponsorships; PayPal works well for one-time donations.
-
-[![Sponsor on GitHub](https://img.shields.io/badge/GitHub%20Sponsors-Donate-ea4aaa?style=flat&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/SpencerZPoole)
-[![Donate with PayPal](https://img.shields.io/badge/PayPal-One--time%20donation-00457C?style=flat&logo=paypal&logoColor=white)](https://paypal.me/mrpooley92)
-
-The upstream author, compatibility contributors, and license terms remain credited above.
